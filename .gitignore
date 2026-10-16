@@ -8,3 +8,4 @@ workshop/mod_id.txt
 workshop/mod-uploader.log
 *.user
 .DS_Store
+mod-uploader.log
