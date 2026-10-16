@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Entelechia111Compat.Tests</AssemblyName>
+    <EntelechiaModDir Condition="'$(EntelechiaModDir)' == '' and $([MSBuild]::IsOSPlatform('OSX'))">$(HOME)/Library/Application Support/Steam/steamapps/workshop/content/2868840/3763861013</EntelechiaModDir>
+    <BaseLibDir Condition="'$(BaseLibDir)' == '' and $([MSBuild]::IsOSPlatform('OSX'))">$(HOME)/Library/Application Support/Steam/steamapps/workshop/content/2868840/3737335127/BaseLib</BaseLibDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Entelechia111Compat/Entelechia111Compat.csproj" />
+    <Reference Include="sts2"><HintPath>$(Sts2DataDir)/sts2.dll</HintPath><Private>true</Private></Reference>
+    <Reference Include="GodotSharp"><HintPath>$(Sts2DataDir)/GodotSharp.dll</HintPath><Private>true</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath><Private>true</Private></Reference>
+    <Reference Include="Entelechia"><HintPath>$(EntelechiaModDir)/Entelechia.dll</HintPath><Private>true</Private></Reference>
+    <Reference Include="BaseLib"><HintPath>$(BaseLibDir)/BaseLib.dll</HintPath><Private>true</Private></Reference>
+    <Reference Include="MonoMod.Backports"><HintPath>$(Sts2DataDir)/MonoMod.Backports.dll</HintPath><Private>true</Private></Reference>
+    <Reference Include="MonoMod.ILHelpers"><HintPath>$(Sts2DataDir)/MonoMod.ILHelpers.dll</HintPath><Private>true</Private></Reference>
+  </ItemGroup>
+  <Target Name="CheckOriginalMod" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(EntelechiaModDir)/Entelechia.dll')" Text="Set EntelechiaModDir to the original Entelechia v1.0.3 installation." />
+    <Error Condition="!Exists('$(BaseLibDir)/BaseLib.dll')" Text="Set BaseLibDir to the installed BaseLib directory." />
+  </Target>
+</Project>

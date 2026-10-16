@@ -1,0 +1,21 @@
+{
+  "id": "Entelechia111Compat",
+  "name": "隐德来希 v0.111 Beta 兼容补丁",
+  "author": "Soul12543",
+  "description": "非官方独立兼容补丁。修复原版隐德来希 v1.0.3 在 v0.111 测试版中的可选消耗接口失配；需同时启用原 Mod 和 BaseLib。",
+  "version": "1.0.0",
+  "min_game_version": "0.111.0",
+  "has_pck": false,
+  "has_dll": true,
+  "dependencies": [
+    {
+      "id": "BaseLib",
+      "min_version": "3.4.7"
+    },
+    {
+      "id": "Entelechia",
+      "min_version": "1.0.3"
+    }
+  ],
+  "affects_gameplay": true
+}

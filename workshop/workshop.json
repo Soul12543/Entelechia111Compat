@@ -1,0 +1,16 @@
+{
+  "title": "隐德来希 v0.111 Beta 非官方兼容补丁 | Entelechia Compat",
+  "description": "[h1]隐德来希 v0.111 Beta 非官方兼容补丁[/h1]\n独立补丁，面向《杀戮尖塔 2》v0.111.0 public-beta 与 lemon 的隐德来希 v1.0.3。需要同时订阅并启用原 Mod 和 BaseLib v3.4.7 或更高版本。\n\n[h2]修复内容[/h2]\n[list]\n[*]修复“断续脉搏”“缝合”可选消耗因新版接口失配而结算失败的问题。\n[*]修复血魔形态的心烛比例在保存与联机状态序列化中的 Decimal 类型兼容问题。\n[*]保留游戏原有的选牌同步与消耗结算流程。\n[/list]\n\n[h2]联机使用[/h2]\n所有参与者都需要启用相同版本的游戏、原隐德来希、BaseLib 和本补丁。仅针对 v0.111.0 / 原 Mod v1.0.3 安装修复，其他版本会明确拒绝接管。\n\n[h2]验证状态[/h2]\n12/12 自动检查通过，实际游戏启动加载通过；包含真实补丁入口、JSON 和网络数据包往返验证。尚未完成双客户端实时联机和完整长局实测，详细范围见 GitHub 验证记录。\n\n[h2]源码、署名与许可证[/h2]\n补丁作者：Soul12543。独立非官方维护，不代表原作者或游戏官方。\n[url=https://github.com/Soul12543/Entelechia111Compat]GitHub 源码与使用说明[/url]\n[url=https://github.com/Soul12543/Entelechia111Compat/blob/main/docs/VALIDATION.md]验证记录[/url]\n\n原 Mod 作者：lemon。\n[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3763861013]原版隐德来希工坊[/url]\n[url=https://github.com/lemon970/Entelechia-Sts2Mod]原版公开源码仓库[/url]\n[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3737335127]BaseLib 前置[/url]\n\n本补丁新写代码按 MIT 发布。MIT 仅覆盖本补丁，不改变原 Mod、BaseLib、游戏或角色资源的权利。发布包不包含原 Mod 的 DLL、PCK、源码或美术。上游仓库本次检查未发现明确 LICENSE，公开可读不视为自由再分发授权。原作者提供对应修复后，建议优先使用原版并按说明移除本补丁。",
+  "visibility": "public",
+  "changeNote": "v1.0.0：修复断续脉搏/缝合的可选消耗接口与血魔形态心烛保存兼容。12/12自动检查及游戏加载通过；双客户端实测待验证。",
+  "tags": [
+    "Quality of Life"
+  ],
+  "dependencies": [
+    3763861013,
+    3737335127
+  ],
+  "contentDescriptors": [],
+  "minBranch": "public-beta",
+  "maxBranch": "public-beta"
+}
