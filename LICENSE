@@ -19,7 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-This license covers this repository's independently authored compatibility
-patch, documentation and preview graphic only. It does not license Entelechia,
-BaseLib, Slay the Spire 2, Arknights or their code/assets. See docs/ATTRIBUTION.md.

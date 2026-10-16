@@ -8,3 +8,6 @@
 安装：将压缩包内 Entelechia111Compat 文件夹放入独立 mods 目录，启用原版 Entelechia、BaseLib 和补丁。联机所有参与者需相同版本。
 
 原作者 lemon：[原 Mod 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3763861013)、[公开源码](https://github.com/lemon970/Entelechia-Sts2Mod)。本补丁 MIT 只覆盖新写内容，未分发原 Mod 程序或美术；详见 ATTRIBUTION。
+[Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3820580518)
+
+代码、测试和说明文档主要由 OpenAI Codex 根据发布者需求生成，检查由 Codex 调用工具执行，由 Soul12543 发布。[AI 生成说明](https://github.com/Soul12543/Entelechia111Compat/blob/main/docs/AI_DISCLOSURE.md)。

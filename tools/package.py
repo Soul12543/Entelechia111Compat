@@ -19,12 +19,13 @@ for name, source in {
     "README.md": root / "README.md",
     "docs/ATTRIBUTION.md": root / "docs/ATTRIBUTION.md",
     "docs/VALIDATION.md": root / "docs/VALIDATION.md",
+    "docs/AI_DISCLOSURE.md": root / "docs/AI_DISCLOSURE.md",
 }.items():
     (stage / name).parent.mkdir(parents=True, exist_ok=True)
     (content / name).parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(source, stage / name)
     shutil.copy2(source, content / name)
-expected = {"Entelechia111Compat.dll", "Entelechia111Compat.json", "LICENSE", "README.md", "docs/ATTRIBUTION.md", "docs/VALIDATION.md"}
+expected = {"Entelechia111Compat.dll", "Entelechia111Compat.json", "LICENSE", "README.md", "docs/ATTRIBUTION.md", "docs/VALIDATION.md", "docs/AI_DISCLOSURE.md"}
 for folder in (stage, content):
     actual = {p.relative_to(folder).as_posix() for p in folder.rglob("*") if p.is_file()}
     if actual != expected:

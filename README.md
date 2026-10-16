@@ -1,9 +1,18 @@
 # Entelechia111Compat
 
+[本补丁 Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3820580518) · [GitHub 源码](https://github.com/Soul12543/Entelechia111Compat) · [下载发布包](https://github.com/Soul12543/Entelechia111Compat/releases/tag/v1.0.0)
+
 由 **Soul12543** 维护的《杀戮尖塔 2》隐德来希 **v0.111 Beta 独立非官方兼容补丁**。本补丁需与 lemon 的原版隐德来希及 BaseLib 同时启用，原角色、卡牌、文案与美术均归原作者或相应权利人所有。
 
 原版入口：[Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3763861013) · [公开源码仓库](https://github.com/lemon970/Entelechia-Sts2Mod)
+
 前置入口：[BaseLib 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3737335127)
+
+## AI 生成说明
+
+本补丁的代码、自动化测试和说明文档主要由 OpenAI Codex 根据发布者需求生成，自动检查和本机加载检查由 Codex 调用工具完成。由 Soul12543 发布。12/12 自动检查与本机加载通过；双客户端实时联机及完整长局尚未实测。源码和测试在 GitHub 公开，便于审阅与复现。原 Mod 的代码与美术不包含在本补丁内，原作者署名和许可关系见下文。
+
+详见 [docs/AI_DISCLOSURE.md](docs/AI_DISCLOSURE.md)。
 
 ## 兼容工作范围
 
