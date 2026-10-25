@@ -1,17 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>Entelechia111Compat</AssemblyName>
-    <Version>1.0.0</Version>
+    <Version>1.2.0</Version>
     <Description>Independent Entelechia compatibility patch for Slay the Spire 2 v0.111 public-beta.</Description>
     <Authors>Soul12543</Authors>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BaseLib"><HintPath>$(BaseLibDir)/BaseLib.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Entelechia"><HintPath>$(EntelechiaModDir)/Entelechia.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="sts2"><HintPath>$(Sts2DataDir)/sts2.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="GodotSharp"><HintPath>$(Sts2DataDir)/GodotSharp.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="0Harmony"><HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
+  <ItemGroup><EmbeddedResource Include="RevisionDescriptions.json" /></ItemGroup>
   <Target Name="CheckGameReferences" BeforeTargets="ResolveReferences">
     <Error Condition="!Exists('$(Sts2DataDir)/sts2.dll')" Text="Set Sts2DataDir to the directory containing your v0.111 sts2.dll, GodotSharp.dll and 0Harmony.dll." />
+    <Error Condition="!Exists('$(EntelechiaModDir)/Entelechia.dll')" Text="Set EntelechiaModDir to the installed original Entelechia v1.0.3 folder." />
+    <Error Condition="!Exists('$(BaseLibDir)/BaseLib.dll')" Text="Set BaseLibDir to the installed BaseLib v3.4.7 folder." />
   </Target>
 </Project>

@@ -1,6 +1,7 @@
 # Entelechia111Compat
+> **v1.2.0（2026-10-25）**：本版本包含玩法调整：心烛整池释放、血速完整重复出牌、余脉吸取、血宴重复触发与每场战斗一次重盈，同时修复施加者归属、存档同步和伤害统计。**38/38** 本地检查通过；本轮游戏内与双客户端实战尚未验证。详见 [更新说明](docs/RELEASE_NOTES_1.2.0.md) 和 [玩法与验证范围](docs/LOCAL_GAMEPLAY_CHANGE.md)。
 
-[本补丁 Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3820580518) · [GitHub 源码](https://github.com/Soul12543/Entelechia111Compat) · [下载发布包](https://github.com/Soul12543/Entelechia111Compat/releases/tag/v1.0.0)
+[本补丁 Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3820580518) · [GitHub 源码](https://github.com/Soul12543/Entelechia111Compat) · [下载发布包](https://github.com/Soul12543/Entelechia111Compat/releases/tag/v1.2.0)
 
 由 **Soul12543** 维护的《杀戮尖塔 2》隐德来希 **v0.111 Beta 独立非官方兼容补丁**。本补丁需与 lemon 的原版隐德来希及 BaseLib 同时启用，原角色、卡牌、文案与美术均归原作者或相应权利人所有。
 
@@ -10,11 +11,14 @@
 
 ## AI 生成说明
 
-本补丁的代码、自动化测试和说明文档主要由 OpenAI Codex 根据发布者需求生成，自动检查和本机加载检查由 Codex 调用工具完成。由 Soul12543 发布。12/12 自动检查与本机加载通过；双客户端实时联机及完整长局尚未实测。源码和测试在 GitHub 公开，便于审阅与复现。原 Mod 的代码与美术不包含在本补丁内，原作者署名和许可关系见下文。
+本补丁的代码、自动化测试和说明文档主要由 OpenAI Codex 根据发布者需求生成，自动检查和本机加载检查由 Codex 调用工具完成。由 Soul12543 发布。本版 38/38 本地检查通过；本轮游戏内加载、双客户端实时联机及完整长局尚未实测。源码和测试在 GitHub 公开，便于审阅与复现。原 Mod 的代码与美术不包含在本补丁内，原作者署名和许可关系见下文。
 
 详见 [docs/AI_DISCLOSURE.md](docs/AI_DISCLOSURE.md)。
 
 ## 兼容工作范围
+
+- **v1.2.0 玩法调整**：萃血和心烛仅由施加者触发；心烛释放全部剩余值，倍率加算；血速完整重复攻击牌；吸取按实际失血回复生命并永久增加最大生命；血宴、痛觉转化、重盈等规则见更新说明。
+- **状态与统计修复**：不死血统+真实挂载保护状态，补齐余烬与战斗计数保存，以及心烛/失血/吸取的统计来源；可选适配 Skada 和沙耶。
 
 - **断续脉搏、缝合的可选消耗**：适配游戏 `CardCmd.Exhaust` 返回类型变化导致的方法失配。补丁在原 Mod 的 `TryExhaustAnotherCard` helper 入口安装 Prefix，使用当前游戏的消耗指令，并保留选择上下文和游戏本身的消耗结算流程。
 - **心烛倍率的存档与网络序列化**：对 `BloodDemonFormPower.HeartCandlePercent` 的 `Decimal` 字段进行定向兼容处理，处理 BaseLib 的 `SavedProperty` 不支持该类型的问题。
@@ -30,7 +34,7 @@
 | 杀戮尖塔 2 | v0.111.0，Steam `public-beta` 分支 |
 | 隐德来希 / Entelechia | v1.0.3 |
 | BaseLib | v3.4.7 |
-| Entelechia111Compat | 1.0.0 |
+| Entelechia111Compat | 1.2.0 |
 
 ## 安装
 
@@ -63,7 +67,7 @@ macOS 的本地 Mod 目录位于 `SlayTheSpire2.app/Contents/MacOS/mods/`。
 需要 .NET 9 SDK，以及本机合法安装的目标游戏。将 `Sts2DataDir` 指向同时包含 `sts2.dll`、`GodotSharp.dll` 和 `0Harmony.dll` 的游戏数据目录：
 
 ```sh
-dotnet build src/Entelechia111Compat/Entelechia111Compat.csproj -c Release -p:Sts2DataDir="/path/to/game/data"
+dotnet build src/Entelechia111Compat/Entelechia111Compat.csproj -c Release -p:Sts2DataDir="/path/to/game/data" -p:BaseLibDir="/path/to/BaseLib" -p:EntelechiaModDir="/path/to/Entelechia"
 ```
 
 Apple Silicon macOS 的常见位置为：
